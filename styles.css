@@ -20,13 +20,14 @@ html {
 
 body {
   background: var(--very-dark-blue);
+  padding: 0 1rem;
 }
 
 .preview-card {
   display: flex;
   flex-direction: column;
   background: var(--dark-desaturated-blue);
-  color: white;
+  color: var(--white);
   width: 90vw;
   max-width: 30rem;
   margin: 5rem auto;
@@ -36,14 +37,20 @@ body {
 }
 
 .banner-card {
-  background: url("./images/image-header-mobile.jpg") no-repeat center center;
-  background-size: cover;
   position: relative;
-  max-width: 100%;
-  min-height: 18rem;
+  min-height: 280px;
 }
 
-.banner-card::after {
+.banner-card img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.banner-card img::after {
   content: "";
   position: absolute;
   height: 100%;
@@ -56,7 +63,7 @@ body {
 }
 
 .card-body {
-  padding: 1.5rem;
+  padding: 3rem 1.5rem 3rem 1.5rem;
 }
 
 .intro {
@@ -82,11 +89,15 @@ body {
   margin-top: 4rem;
   text-align: center;
 }
-.data div {
+.data ul {
+  list-style: none;
+}
+.data ul li {
   margin-top: 2rem;
 }
 
-.data h2 {
+.data .number-status {
+  color: var(--white);
   font-weight: 700;
   font-size: 1.5rem;
 }
@@ -104,26 +115,42 @@ body {
 .attribution {
   font-size: 11px;
   text-align: center;
-  color: white;
+  color: var(--white);
 }
 .attribution a {
   color: var(--soft-violet);
 }
 
-@media only screen and (min-width: 380px) {
-  .banner-card {
-    min-height: 22rem;
-  }
-}
-
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 420px) {
   body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+  .preview-card {
+    margin: auto;
+    width: 100%;
+    max-width: 35rem;
+  }
+  .banner-card {
+    min-height: 26rem;
+  }
+  .data {
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+  .data ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 900px) {
   .preview-card {
     flex-direction: row-reverse;
     margin: auto;
@@ -134,19 +161,21 @@ body {
     text-align: left;
   }
   .banner-card {
-    background: url("./images/image-header-desktop.jpg") no-repeat center center;
     width: 100%;
-    min-height: 446px;
+  }
+  .banner-card img {
+    content: url("./images/image-header-desktop.jpg");
+    position: relative;
   }
   .card-body {
-    padding: 5rem 7.75rem 2rem 4rem;
+    padding: 5rem 0 2rem 4rem;
     height: 446px;
   }
   .intro {
-    padding: 0;
+    padding: 0 8rem 0 0;
   }
   .intro h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .intro p {
     margin-top: 2rem;
@@ -154,17 +183,21 @@ body {
     line-height: 1.75;
   }
   .data {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
+    padding: 0 7rem 0 0;
+  }
+  .data ul {
     padding-right: 4rem;
   }
-  .data h2 {
+  .data .number-status {
     font-size: 1.6rem;
   }
   .data p {
     font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 1010px) {
+  .intro h1 {
+    font-size: 2.5rem;
   }
 }
