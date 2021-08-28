@@ -55,7 +55,7 @@ body {
   opacity: 0.8;
 }
 
-main {
+.card-body {
   padding: 1.5rem;
 }
 
@@ -138,7 +138,7 @@ main {
     width: 100%;
     min-height: 446px;
   }
-  main {
+  .card-body {
     padding: 5rem 7.75rem 2rem 4rem;
     height: 446px;
   }
