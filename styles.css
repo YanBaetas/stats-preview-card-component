@@ -20,7 +20,7 @@ html {
 
 body {
   background: var(--very-dark-blue);
-  padding: 0 1rem;
+  padding: 2rem 1rem;
 }
 
 .preview-card {
@@ -50,7 +50,7 @@ body {
   min-height: 100%;
 }
 
-.banner-card img::after {
+.banner-card::after {
   content: "";
   position: absolute;
   height: 100%;
